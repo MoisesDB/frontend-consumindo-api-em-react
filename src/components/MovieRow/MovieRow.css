@@ -20,38 +20,71 @@
   width: 100%;
   transform: scale(0.9);
   transition: all ease 0.4s;
+  z-index: -999;
+  /* opacity: 0; */
 }
 
 .movieRow--card img:hover {
   transform: scale(1);
+  opacity: 0.2;
   cursor: pointer;
 }
 
-.movieRow--left,
-.movieRow--right {
+.movieRow--info {
+  width: inherit;
+  height: 100%;
+  z-index: 9;
+  transform: scale(0.9);
+}
+
+.movieRow--details {
   position: absolute;
-  width: 40px;
-  height: 305px;
-  background-color: rgba(0, 0, 0, 0.6);
-  z-index: 99;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  cursor: pointer;
+  text-align: center;
+  background-color: #000;
   opacity: 0;
-  transition: all ease 0.5s;
+  z-index: 99;
+  transition: all ease 0.4s;
 }
 
-.movieRow--left {
-  left: 0;
+.movieRow--info:hover > img {
+  transform: scale(1);
 }
 
-.movieRow--right {
-  right: 0;
+.movieRow--details:hover {
+  opacity: 0.9;
+  transform: scale(1) translate(-50%, -50%);
+  cursor: pointer;
 }
 
-.movieRow:hover .movieRow--left,
-.movieRow:hover .movieRow--right {
-  opacity: 1;
+.movieRow--details h2 {
+  margin: 25px 0 0 0;
+}
+
+.movieRow--average {
+  color: greenyellow;
+  margin: 25px 0 0 0;
+}
+
+.movieRow--check {
+  border-radius: 25px;
+  border: 2px solid gray;
+  padding: 10px 20px;
+  background-color: transparent;
+  margin: 25px 0 0 0;
+  transition: all ease 0.2s;
+}
+
+.movieRow--check:hover {
+  background-color: #12b7dd;
 }
