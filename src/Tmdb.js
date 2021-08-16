@@ -4,7 +4,6 @@ const API_BASE = "https://api.themoviedb.org/3";
 const doFetch = async (endpoint) => {
   const req = await fetch(`${API_BASE}${endpoint}`);
   const json = await req.json();
-  console.log(json);
   return json;
 };
 
@@ -16,7 +15,7 @@ export default {
         slug: "trending",
         title: "Populares da Semana",
         items: await doFetch(
-          `/trending/all/week?language=pt-BR&api_key=${API_KEY}`
+          `/trending/movie/week?language=pt-BR&api_key=${API_KEY}`
         ),
       },
     ];
@@ -28,6 +27,17 @@ export default {
         title: `Resultado da pesquisa: ${searchedValue}`,
         items: await doFetch(
           `/search/movie/?api_key=${API_KEY}&language=pt-BR&query=${searchedValue}`
+        ),
+      },
+    ];
+  },
+
+  getInfo: async (movieId) => {
+    return [
+      {
+        slug: "movieTarget",
+        items: await doFetch(
+          `/movie/${movieId}?language=pt-BR&api_key=${API_KEY}`
         ),
       },
     ];

@@ -22,6 +22,7 @@
   transition: all ease 0.4s;
   z-index: -999;
   /* opacity: 0; */
+  border-radius: 15px;
 }
 
 .movieRow--card img:hover {
@@ -55,6 +56,7 @@
   opacity: 0;
   z-index: 99;
   transition: all ease 0.4s;
+  border-radius: 15px;
 }
 
 .movieRow--info:hover > img {
@@ -83,8 +85,22 @@
   background-color: transparent;
   margin: 25px 0 0 0;
   transition: all ease 0.2s;
+  text-decoration: none;
+  color: #fff;
 }
 
 .movieRow--check:hover {
   background-color: #12b7dd;
+}
+
+@media (max-width: 760px) {
+  .movieRow--list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .movieRow--details {
+    opacity: 0.9;
+  }
 }

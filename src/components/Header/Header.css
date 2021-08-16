@@ -19,6 +19,7 @@ header.headerFade {
 
 .header--logo {
   height: 30px;
+  margin: 0 10px 0 0;
 }
 
 .header--logo img {
@@ -26,8 +27,7 @@ header.headerFade {
 }
 
 .header--searchField {
-  width: 36%;
-  /* margin: auto; */
+  width: 550px;
   display: flex;
   justify-content: center;
 }

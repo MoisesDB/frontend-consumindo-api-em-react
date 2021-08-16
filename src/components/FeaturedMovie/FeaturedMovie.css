@@ -1,0 +1,61 @@
+.movieInfo {
+}
+
+.movieInfo--area {
+  height: 100vh;
+}
+
+.movieInfo--vertical {
+  width: inherit;
+  height: inherit;
+  background: linear-gradient(to top, #222 10%, transparent 90%);
+}
+
+.movieInfo--horizontal {
+  width: inherit;
+  height: inherit;
+  background: linear-gradient(to right, #222 30%, transparent 70%);
+  padding: 250px 0 0 150px;
+}
+
+.movieInfo--name {
+  font-size: 50px;
+}
+
+.movieInfo--descField,
+.movieInfo--genres,
+.movieInfo--languages {
+  display: flex;
+  margin: 0 0 25px 0;
+}
+
+.movieInfo--year {
+  margin: 0 25px;
+}
+
+.movieInfo--average {
+  color: greenyellow;
+}
+
+.movieInfo--description {
+  width: 50%;
+  margin: 0 0 25px 0;
+}
+
+.movieInfo--button {
+  width: 10%;
+  border-radius: 25px;
+  border: 2px solid gray;
+  padding: 10px 20px;
+  background-color: transparent;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all ease 0.2s;
+  cursor: pointer;
+}
+
+.movieInfo--button:hover {
+  background-color: #12b7dd;
+}
