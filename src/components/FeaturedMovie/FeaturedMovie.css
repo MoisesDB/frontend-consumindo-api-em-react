@@ -1,4 +1,5 @@
 .movieInfo {
+  height: 100vh;
 }
 
 .movieInfo--area {
@@ -43,7 +44,7 @@
 }
 
 .movieInfo--button {
-  width: 10%;
+  width: 177px;
   border-radius: 25px;
   border: 2px solid gray;
   padding: 10px 20px;
@@ -58,4 +59,20 @@
 
 .movieInfo--button:hover {
   background-color: #12b7dd;
+}
+
+@media (max-width: 760px) {
+  .movieInfo--name {
+    font-size: 30px;
+    width: 95%;
+  }
+
+  .movieInfo--horizontal {
+    padding: 150px 0 0 20px;
+    background: linear-gradient(to right, #222 10%, transparent 90%);
+  }
+
+  .movieInfo--description {
+    width: 95%;
+  }
 }

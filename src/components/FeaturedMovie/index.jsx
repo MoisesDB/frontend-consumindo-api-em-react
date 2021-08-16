@@ -2,8 +2,7 @@ import React from "react";
 import "./FeaturedMovie.css";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 
-// eslint-disable-next-line import/no-anonymous-default-export
-export default ({ items }) => {
+const FeaturedMovie = ({ items }) => {
   let firstDate = new Date(items.release_date);
 
   return (
@@ -46,3 +45,5 @@ export default ({ items }) => {
     </div>
   );
 };
+
+export default FeaturedMovie;

@@ -7,7 +7,6 @@
 }
 
 .movieRow--listarea {
-  overflow-x: hidden;
   padding: 0 30px;
 }
 
@@ -102,5 +101,10 @@
 
   .movieRow--details {
     opacity: 0.9;
+  }
+
+  .movieRow h2 {
+    margin: 0;
+    text-align: center;
   }
 }

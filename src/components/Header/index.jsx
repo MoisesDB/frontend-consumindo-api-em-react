@@ -2,8 +2,7 @@ import React from "react";
 import "./Header.css";
 import SearchIcon from "@material-ui/icons/Search";
 
-// eslint-disable-next-line import/no-anonymous-default-export
-export default ({ fade, handleBtnSearch }) => {
+const Header = ({ fade, handleBtnSearch }) => {
   return (
     <header className={fade ? "headerFade" : ""}>
       <div className="header--logo">
@@ -23,3 +22,5 @@ export default ({ fade, handleBtnSearch }) => {
     </header>
   );
 };
+
+export default Header;

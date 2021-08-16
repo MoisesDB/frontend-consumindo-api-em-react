@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from "react";
-import Tmdb from "../Tmdb";
+import Tmdb from "../services/Tmdb";
 import MovieRow from "../components/MovieRow";
 import Header from "../components/Header";
-import { BrowserRouter as Router } from "react-router-dom";
 
-// eslint-disable-next-line import/no-anonymous-default-export
-export default () => {
+const Home = () => {
   const [movieList, setMovieList] = useState([]);
   const [headerFade, setHeaderFade] = useState(false);
 
   useEffect(() => {
     const loadAll = async () => {
       let list = await Tmdb.getList();
-      setMovieList(list);
+      list[0].items.results.sort((a, b) => b.vote_average - a.vote_average);
+      setMovieList(list.sort((a, b) => b.vote_average - a.vote_average));
     };
 
     loadAll();
@@ -23,8 +22,6 @@ export default () => {
       let list = await Tmdb.getResult(searchedValue);
       if (searchedValue.length >= 1) {
         setMovieList(list);
-      } else {
-        return;
       }
     };
 
@@ -48,23 +45,23 @@ export default () => {
   }, []);
 
   return (
-    <Router>
-      <div className="page">
-        <Header fade={headerFade} handleBtnSearch={handleBtnSearch} />
-        <section className="lists">
-          {movieList.map((item, key) => (
-            <MovieRow title={item.title} key={key} items={item.items} />
-          ))}
-        </section>
-        {movieList.length <= 0 && (
-          <div className="loading">
-            <img
-              src="https://www.listasdeempresas.com.br/images/loader.gif"
-              alt="logo"
-            ></img>
-          </div>
-        )}
-      </div>
-    </Router>
+    <div className="page">
+      <Header fade={headerFade} handleBtnSearch={handleBtnSearch} />
+      <section className="lists">
+        {movieList.map((item, key) => (
+          <MovieRow title={item.title} key={key} items={item.items} />
+        ))}
+      </section>
+      {movieList.length <= 0 && (
+        <div className="loading">
+          <img
+            src="https://www.listasdeempresas.com.br/images/loader.gif"
+            alt="logo"
+          ></img>
+        </div>
+      )}
+    </div>
   );
 };
+
+export default Home;
